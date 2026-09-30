@@ -1,14 +1,146 @@
-<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Noelandia — Demo</title><style>
-*{box-sizing:border-box}body{margin:0;font:16px Segoe UI,Arial;background:#fbf5e9;color:#26312d}.w{max-width:1050px;margin:auto;padding:0 22px}header{padding:20px 0;border-bottom:1px solid #e6d8bf}.top{display:flex;justify-content:space-between;align-items:center}.brand{font-weight:800;letter-spacing:2px;color:#153d32}.tag{font-size:12px;color:#7b6d59}.hero{background:linear-gradient(135deg,#0d2d25,#194638);color:white;padding:76px 0}.hg{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center}.ey{color:#f1c96f;font-size:12px;letter-spacing:2px;font-weight:700}.hero h1{font-size:58px;line-height:1;margin:12px 0 20px}.hero p{font-size:19px;line-height:1.55;color:#e4eee8}.art{height:300px;overflow:hidden;border:1px solid #456f62;border-radius:26px;display:grid;place-items:center;font-size:100px;background:#12352c}.b{display:inline-block;padding:13px 18px;border-radius:10px;background:#f3c960;color:#21352e;text-decoration:none;font-weight:700;margin:12px 8px 0 0}section{padding:64px 0}h2{font-size:34px;color:#153d32;margin:0 0 10px}.sub{color:#6e6559;line-height:1.6;max-width:700px}.g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.c{background:white;border:1px solid #eadfcd;border-radius:18px;overflow:hidden}.ph{height:190px;overflow:hidden;display:grid;place-items:center;font-size:70px;background:#efe5d2}.cb{padding:18px}.cb h3{margin:0 0 8px;color:#153d32}.cb p{margin:0;color:#6d6459;line-height:1.5}.why{background:#efe5d2}.box{background:#fffaf1;border-radius:16px;padding:22px}.steps{border-left:3px solid #c99a3c;padding-left:16px}.cta{background:#a83b36;color:white;border-radius:24px;padding:34px}.cta h2{color:white}.cta p{color:#f6dddd}.note{font-size:12px;color:#8c7d68;margin-top:10px}footer{padding:24px 0;color:#807466;font-size:13px}@media(max-width:800px){.hg,.g{grid-template-columns:1fr}.hero h1{font-size:44px}.art{height:220px}}.art img,.ph img{width:100%;height:100%;object-fit:cover;display:block}.brand-wrap{display:flex;align-items:center;gap:10px}.brand-wrap img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid #efe5d2}</style></head><body>
-<header><div class="w top"><div class="brand-wrap"><img src="assets/perfil.png" alt="Noelandia"><div class="brand">NOELANDIA</div></div><div class="tag">MUÑECOS NAVIDEÑOS · HECHOS A MANO</div></div></header>
-<div class="hero"><div class="w hg"><div><div class="ey">DECORACIÓN NAVIDEÑA ARTESANAL</div><h1>Navidad con detalles hechos a mano.</h1><p>Muñecos y piezas decorativas creadas en familia para darle a cada rincón un toque cálido, especial y diferente.</p><a class="b" href="#modelos">Ver modelos</a><a class="b" href="https://wa.me/51934913841?text=Hola%20Noelandia%2C%20quiero%20consultar%20por%20sus%20mu%C3%B1ecos%20navide%C3%B1os." target="_blank" rel="noopener">Consultar por WhatsApp</a></div><div class="art"><img src="assets/portada.png" alt="Noelandia"></div></div></div>
-<section id="modelos"><div class="w"><h2>Modelos para tu espacio</h2><p class="sub">Algunos de nuestros modelos disponibles. Consulta stock y opciones por encargo.</p><div class="g">
-<div class="c"><div class="ph"><img src="assets/duende-farol.png" alt="Duende Navideño con Farol"></div><div class="cb"><h3>Duende Navideño con Farol</h3><p>77 cm · S/110 · Hecho artesanalmente.</p><div class="note">Listo para entrega · Consulta disponibilidad.</div></div></div>
-<div class="c"><div class="ph"><img src="assets/galletita.png" alt="Galletita Sentada"></div><div class="cb"><h3>Galletita Sentada</h3><p>42 cm · S/65 · Trabajo artesanal.</p><div class="note">Lista para entrega · Consulta disponibilidad.</div></div></div>
-<div class="c"><div class="ph"><img src="assets/gnomo.png" alt="Gnomo Barba Blanca"></div><div class="cb"><h3>Gnomo Barba Blanca</h3><p>92 cm · S/220 · Pieza grande decorativa.</p><div class="note">Listo para entrega · Consulta disponibilidad.</div></div></div>
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Muñecos navideños hechos a mano por Noelandia. Consulta modelos disponibles, pedidos por encargo y personalización por WhatsApp.">
+<title>Noelandia | Muñecos navideños hechos a mano</title>
+<link rel="icon" type="image/png" href="assets/noelandia/perfil.png">
+<link href="css/styles.css" rel="stylesheet">
+<style>
+:root{--g:#1f4d3a;--gd:#153729;--w:#8a2f3a;--gold:#c69a52;--cream:#fbf7ef;--ink:#27231f;--soft:#eee7dc}
+html{scroll-behavior:smooth}body{background:var(--cream);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+.topline{background:var(--gd);color:#fff;font-size:.9rem;text-align:center;padding:.45rem 1rem}
+.navbar{background:rgba(251,247,239,.96)!important;backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,.06)}
+.brand-logo{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.navbar-brand strong{letter-spacing:.04em}.nav-link{font-weight:600;color:#3b342e!important}.nav-link:hover{color:var(--w)!important}
+.btn-nl{background:var(--w);border-color:var(--w);color:#fff}.btn-nl:hover{background:#6f2630;border-color:#6f2630;color:#fff}
+.btn-outline-nl{border:1px solid var(--g);color:var(--g)}.btn-outline-nl:hover{background:var(--g);color:#fff}
+.hero{min-height:72vh;display:grid;place-items:center;position:relative;padding:3rem 0;background:url("assets/noelandia-optimized/portada.jpg") center/cover no-repeat}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(17,35,26,.82),rgba(17,35,26,.42),rgba(17,35,26,.12))}
+.hero-content{position:relative;z-index:1;color:#fff;max-width:660px;padding:2rem;background:rgba(16,38,29,.72);border:1px solid rgba(255,255,255,.18);border-radius:26px;box-shadow:0 18px 46px rgba(0,0,0,.18);backdrop-filter:blur(3px)}.hero-kicker{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);padding:.45rem .75rem;border-radius:999px;font-weight:700}
+.hero h1{font-size:clamp(2.4rem,6vw,5rem);line-height:.98;font-weight:800;margin:1rem 0}.hero p{font-size:1.15rem;max-width:620px;color:#f6efe5}
+.section{padding:5rem 0}.section-title{font-weight:800;color:var(--gd)}.section-sub{color:#6f655c;max-width:720px}
+.product-card{height:100%;border:0;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 14px 38px rgba(45,36,26,.08);transition:.2s transform,.2s box-shadow}
+.product-card:hover{transform:translateY(-4px);box-shadow:0 18px 44px rgba(45,36,26,.13)}
+.product-img-wrap{position:relative;aspect-ratio:4/5;overflow:hidden;background:#f3eee6;cursor:zoom-in;padding:10px}
+.product-img{width:100%;height:100%;object-fit:contain;transition:.25s transform;border-radius:12px}.product-img-wrap:hover .product-img{transform:scale(1.035)}
+.badge-stock{position:absolute;top:14px;left:14px;background:#fff;color:var(--gd);padding:.38rem .6rem;border-radius:999px;font-weight:800;font-size:.78rem;box-shadow:0 4px 14px rgba(0,0,0,.1)}
+.price{font-weight:850;font-size:1.45rem;color:var(--w)}.meta{font-size:.92rem;color:#73695f}.card-actions{display:grid;grid-template-columns:1fr 1fr;gap:.6rem}
+.info-strip{background:var(--g);color:#fff;border-radius:24px;padding:2rem}.info-item{padding:1rem}.info-item strong{display:block;font-size:1.05rem}.info-item span{color:#e8efe9}
+.steps{counter-reset:step}.step{position:relative;background:#fff;border-radius:18px;padding:1.4rem 1.4rem 1.4rem 4.4rem;box-shadow:0 10px 28px rgba(45,36,26,.07);height:100%}
+.step:before{counter-increment:step;content:counter(step);position:absolute;left:1.2rem;top:1.15rem;width:2.25rem;height:2.25rem;display:grid;place-items:center;border-radius:50%;background:var(--gold);color:#fff;font-weight:900}
+details{background:#fff;border-radius:14px;padding:1rem 1.15rem;box-shadow:0 7px 20px rgba(45,36,26,.05)}details+details{margin-top:.8rem}summary{cursor:pointer;font-weight:750;color:var(--gd)}details p{margin:.8rem 0 0;color:#6b6259}
+.contact-box{background:linear-gradient(135deg,var(--gd),var(--g));color:#fff;border-radius:28px;padding:2.4rem}.contact-box p{color:#e9f0eb}
+.footer{background:#10261d;color:#dce7df;padding:2.5rem 0}
+.float-wa{position:fixed;right:18px;bottom:18px;z-index:1080;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;text-decoration:none;background:#25D366;color:#fff;font-weight:900;box-shadow:0 10px 24px rgba(0,0,0,.22)}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:2000;display:none;align-items:center;justify-content:center;padding:2rem}.lightbox.open{display:flex}.lightbox img{max-width:min(1100px,94vw);max-height:88vh;object-fit:contain;border-radius:12px}.lightbox button{position:absolute;right:22px;top:18px;border:0;background:transparent;color:#fff;font-size:2.2rem}
+.modal-content{border:0;border-radius:22px;overflow:hidden}.modal-header{background:var(--gd);color:#fff;border:0}.modal-body{padding:1.5rem}.modal-price{font-size:1.6rem;font-weight:850;color:var(--w)}
+@media(max-width:767px){.hero{min-height:66vh;background-position:58% center;padding:1.5rem 0}.hero-content{padding:1.35rem;border-radius:20px}.hero:before{background:rgba(17,35,26,.68)}.hero-content{padding:4rem 0}.hero h1{font-size:2.65rem}.card-actions{grid-template-columns:1fr}.section{padding:3.7rem 0}.info-strip{padding:1rem}.contact-box{padding:1.6rem}.navbar .btn-nl{margin-top:.75rem;width:100%}}
+</style>
+</head>
+<body>
+<div class="topline">Muñecos navideños hechos a mano · modelos disponibles y pedidos por encargo</div>
+<nav class="navbar navbar-expand-lg sticky-top">
+<div class="container">
+<a class="navbar-brand d-flex align-items-center gap-2" href="#inicio"><img class="brand-logo" src="assets/noelandia/perfil.png" alt="Noelandia"><strong>NOELANDIA</strong></a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+<div id="nav" class="collapse navbar-collapse">
+<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+<li class="nav-item"><a class="nav-link" href="#modelos">Modelos</a></li>
+<li class="nav-item"><a class="nav-link" href="#como-comprar">Cómo comprar</a></li>
+<li class="nav-item"><a class="nav-link" href="#preguntas">Preguntas</a></li>
+<li class="nav-item"><a class="nav-link" href="https://instagram.com/noelandia.pe" target="_blank" rel="noopener">Instagram</a></li>
+<li class="nav-item ms-lg-2"><a class="btn btn-nl px-3" href="https://wa.me/51934913841?text=Hola%20Noelandia%2C%20quiero%20consultar%20por%20sus%20mu%C3%B1ecos%20navide%C3%B1os." target="_blank" rel="noopener">WhatsApp</a></li>
+</ul></div></div></nav>
+
+<header id="inicio" class="hero"><div class="container"><div class="hero-content">
+<span class="hero-kicker">NAVIDAD HECHA A MANO</span>
+<h1>Detalles que hacen sentir Navidad.</h1>
+<p>Muñecos navideños elaborados artesanalmente, con modelos listos para entrega y opciones por encargo según disponibilidad de materiales.</p>
+<div class="d-flex flex-wrap gap-2 mt-4">
+<a class="btn btn-light btn-lg px-4" href="#modelos">Ver modelos</a>
+<a class="btn btn-nl btn-lg px-4" href="https://wa.me/51934913841?text=Hola%20Noelandia%2C%20quiero%20ver%20modelos%20disponibles." target="_blank" rel="noopener">Consultar disponibilidad</a>
+</div></div></div></header>
+
+<main>
+<section id="modelos" class="section"><div class="container">
+<div class="d-flex flex-column flex-lg-row justify-content-between align-items-lg-end gap-3 mb-4">
+<div><h2 class="section-title display-6 mb-2">Modelos destacados</h2><p class="section-sub mb-0">Toca una foto para verla grande. Revisa los detalles de cada pieza o consulta ese modelo directamente por WhatsApp.</p></div>
+<span class="badge rounded-pill text-bg-light border px-3 py-2">Stock sujeto a disponibilidad</span></div>
+<div class="row g-4">
+
+<div class="col-md-6 col-xl-4"><article class="product-card">
+<div class="product-img-wrap" onclick="openLightbox('assets/noelandia-optimized/duende-farol.jpg','Duende Navideño con Farol')"><span class="badge-stock">Disponible</span><img class="product-img" loading="lazy" decoding="async" src="assets/noelandia-optimized/duende-farol.jpg" alt="Duende Navideño con Farol"></div>
+<div class="p-4"><div class="d-flex justify-content-between gap-3 align-items-start"><div><h3 class="h5 fw-bold mb-1">Duende Navideño con Farol</h3><div class="meta">77 cm · hecho a mano</div></div><div class="price">S/110</div></div>
+<div class="card-actions mt-4"><button class="btn btn-outline-nl" onclick="openProduct('duende')">Ver detalles</button><a class="btn btn-nl" target="_blank" rel="noopener" href="https://wa.me/51934913841?text=Hola%20Noelandia%2C%20me%20interesa%20el%20Duende%20Navide%C3%B1o%20con%20Farol%20de%2077%20cm%20a%20S%2F110.%20%C2%BFSigue%20disponible%3F">Consultar este modelo</a></div></div>
+</article></div>
+
+<div class="col-md-6 col-xl-4"><article class="product-card">
+<div class="product-img-wrap" onclick="openLightbox('assets/noelandia-optimized/galletita.jpg','Galletita Sentada')"><span class="badge-stock">Disponible</span><img class="product-img" loading="lazy" decoding="async" src="assets/noelandia-optimized/galletita.jpg" alt="Galletita Sentada"></div>
+<div class="p-4"><div class="d-flex justify-content-between gap-3 align-items-start"><div><h3 class="h5 fw-bold mb-1">Galletita Sentada</h3><div class="meta">42 cm · hecho a mano</div></div><div class="price">S/65</div></div>
+<div class="card-actions mt-4"><button class="btn btn-outline-nl" onclick="openProduct('galletita')">Ver detalles</button><a class="btn btn-nl" target="_blank" rel="noopener" href="https://wa.me/51934913841?text=Hola%20Noelandia%2C%20me%20interesa%20la%20Galletita%20Sentada%20de%2042%20cm%20a%20S%2F65.%20%C2%BFSigue%20disponible%3F">Consultar este modelo</a></div></div>
+</article></div>
+
+<div class="col-md-6 col-xl-4"><article class="product-card">
+<div class="product-img-wrap" onclick="openLightbox('assets/noelandia-optimized/gnomo.jpg','Gnomo Barba Blanca')"><span class="badge-stock">Disponible</span><img class="product-img" loading="lazy" decoding="async" src="assets/noelandia-optimized/gnomo.jpg" alt="Gnomo Barba Blanca"></div>
+<div class="p-4"><div class="d-flex justify-content-between gap-3 align-items-start"><div><h3 class="h5 fw-bold mb-1">Gnomo Barba Blanca</h3><div class="meta">92 cm · hecho a mano</div></div><div class="price">S/220</div></div>
+<div class="card-actions mt-4"><button class="btn btn-outline-nl" onclick="openProduct('gnomo')">Ver detalles</button><a class="btn btn-nl" target="_blank" rel="noopener" href="https://wa.me/51934913841?text=Hola%20Noelandia%2C%20me%20interesa%20el%20Gnomo%20Barba%20Blanca%20de%2092%20cm%20a%20S%2F220.%20%C2%BFSigue%20disponible%3F">Consultar este modelo</a></div></div>
+</article></div>
+
 </div></div></section>
-<section class="why"><div class="w"><h2>¿Por qué Noelandia?</h2><div class="g"><div class="box"><b>Hecho a mano</b><p>Trabajo familiar artesanal con trayectoria documentada desde 2013.</p></div><div class="box"><b>Atención directa</b><p>Consulta modelos, disponibilidad y opciones personalizadas por WhatsApp.</p></div><div class="box"><b>Stock y pedidos</b><p>Modelos listos para entrega y pedidos por encargo con 50% de adelanto.</p></div></div></div></section>
-<section><div class="w"><h2>Comprar puede ser simple</h2><div class="g"><div class="steps"><b>PASO 1 · Elige</b><p>Revisa los modelos destacados.</p></div><div class="steps"><b>PASO 2 · Consulta</b><p>Pregunta por disponibidad oàpedido.</p></div><div class="steps"><b>PASO 3 · Coordina</b><p>Confirma disponibilidad, entrega o envío. Envíos a provincia con flete aparte.</p></div></div></div></section>
-<section><div class="w"><div class="cta"><h2>¿Buscas un detalle diferente para esta Navidad?</h2><p>Cuéntanos qué espacio quieres decorar y te mostramos opciones.</p><a class="b" href="https://wa.me/51934913841?text=Hola%20Noelandia%2C%20quiero%20consultar%20por%20sus%20mu%C3%B1ecos%20navide%C3%B1os." target="_blank" rel="noopener">Escribir por WhatsApp</a></div></div></section>
-<footer><div class="w">Noelandia · Demo comercial de Agencia web · 2026</div></footer>
-</body></html>
+
+<section class="pb-5"><div class="container"><div class="info-strip"><div class="row text-center text-md-start">
+<div class="col-md-4 info-item"><strong>Hecho a mano</strong><span>Trabajo familiar con trayectoria documentada desde 2013.</span></div>
+<div class="col-md-4 info-item"><strong>Listos y por encargo</strong><span>Consulta qué modelos están disponibles y cuáles pueden prepararse.</span></div>
+<div class="col-md-4 info-item"><strong>Atención directa</strong><span>Coordinamos disponibilidad, personalización y pedido por WhatsApp.</span></div>
+</div></div></div></section>
+
+<section id="como-comprar" class="section bg-white"><div class="container">
+<h2 class="section-title display-6 mb-2">Cómo comprar</h2><p class="section-sub mb-4">Un proceso simple, sin formularios complicados.</p>
+<div class="row g-3 steps">
+<div class="col-md-4"><div class="step"><h3 class="h6 fw-bold">Elige tu modelo</h3><p class="mb-0 text-secondary">Revisa los modelos destacados y toca “Consultar este modelo”.</p></div></div>
+<div class="col-md-4"><div class="step"><h3 class="h6 fw-bold">Confirma disponibilidad</h3><p class="mb-0 text-secondary">Te indicamos stock, opciones de personalización y condiciones del pedido.</p></div></div>
+<div class="col-md-4"><div class="step"><h3 class="h6 fw-bold">Coordina tu pedido</h3><p class="mb-0 text-secondary">Los pedidos por encargo se trabajan con 50% de adelanto y por orden de pago.</p></div></div>
+</div></div></section>
+
+<section id="preguntas" class="section"><div class="container"><div class="row g-5 align-items-start">
+<div class="col-lg-5"><h2 class="section-title display-6">Preguntas frecuentes</h2><p class="section-sub">La información final de cada pedido se confirma por WhatsApp porque los materiales y el stock pueden variar.</p></div>
+<div class="col-lg-7">
+<details><summary>¿Todos los modelos están disponibles inmediatamente?</summary><p>No. Hay modelos listos y otros que se elaboran por encargo. La disponibilidad se confirma antes de cerrar el pedido.</p></details>
+<details><summary>¿Cómo funciona un pedido por encargo?</summary><p>Se solicita un adelanto del 50%. La producción se organiza por orden de pago.</p></details>
+<details><summary>¿Cuánto demora la elaboración?</summary><p>Como referencia se comunican aproximadamente 4 días, pero el plazo real se confirma según el modelo, la carga de pedidos y los materiales disponibles.</p></details>
+<details><summary>¿Se puede personalizar?</summary><p>Sí, cuando los materiales necesarios están disponibles. La opción se revisa caso por caso antes de confirmar.</p></details>
+<details><summary>¿Realizan envíos a provincia?</summary><p>Sí. El flete o costo de transporte se coordina por separado del precio del producto.</p></details>
+</div></div></div></section>
+
+<section id="contacto" class="pb-5"><div class="container"><div class="contact-box d-lg-flex align-items-center justify-content-between gap-4">
+<div><h2 class="fw-bold mb-2">¿Viste un modelo que te gustó?</h2><p class="mb-0">Escríbenos y consulta disponibilidad antes de hacer tu pedido.</p></div>
+<div class="d-flex flex-wrap gap-2 mt-3 mt-lg-0"><a class="btn btn-light btn-lg" href="https://wa.me/51934913841?text=Hola%20Noelandia%2C%20quiero%20consultar%20por%20un%20modelo." target="_blank" rel="noopener">Hablar por WhatsApp</a><a class="btn btn-outline-light btn-lg" href="https://instagram.com/noelandia.pe" target="_blank" rel="noopener">Ver Instagram</a></div>
+</div></div></section>
+</main>
+
+<footer class="footer"><div class="container d-flex flex-column flex-md-row justify-content-between gap-2"><div><strong>Noelandia</strong><div class="small">Muñecos navideños hechos a mano.</div></div><div class="small">Disponibilidad sujeta a confirmación</div></div></footer>
+<a class="float-wa" href="https://wa.me/51934913841?text=Hola%20Noelandia%2C%20quiero%20consultar%20por%20sus%20mu%C3%B1ecos%20navide%C3%B1os." target="_blank" rel="noopener" aria-label="Abrir WhatsApp">WA</a>
+
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)"><button aria-label="Cerrar" onclick="closeLightbox(event,true)">×</button><img id="lightboxImg" src="" alt=""></div>
+
+<div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content">
+<div class="modal-header"><h2 id="modalTitle" class="modal-title h5 fw-bold"></h2><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button></div>
+<div class="modal-body"><div class="row g-3"><div class="col-5"><img id="modalImg" class="img-fluid rounded-3" alt=""></div><div class="col-7"><div id="modalMeta" class="meta mb-2"></div><div id="modalPrice" class="modal-price mb-3"></div><p id="modalText" class="mb-3"></p><ul id="modalList" class="small ps-3"></ul></div></div><a id="modalWa" class="btn btn-nl w-100 mt-3" target="_blank" rel="noopener">Consultar este modelo por WhatsApp</a></div>
+</div></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const products={
+duende:{title:"Duende Navideño con Farol",meta:"77 cm · disponible",price:"S/110",img:"assets/noelandia-optimized/duende-farol.jpg",text:"Pieza navideña hecha a mano. Incluye farol rojo.",list:["Disponibilidad sujeta a confirmación.","Personalización según materiales disponibles.","Envío a provincia con flete aparte."],wa:"https://wa.me/51934913841?text=Hola%20Noelandia%2C%20me%20interesa%20el%20Duende%20Navide%C3%B1o%20con%20Farol%20de%2077%20cm%20a%20S%2F110.%20%C2%BFSigue%20disponible%3F"},
+galletita:{title:"Galletita Sentada",meta:"42 cm · disponible",price:"S/65",img:"assets/noelandia-optimized/galletita.jpg",text:"Modelo compacto y decorativo, elaborado artesanalmente.",list:["Disponibilidad sujeta a confirmación.","Ideal para decoración de interiores.","Envío a provincia con flete aparte."],wa:"https://wa.me/51934913841?text=Hola%20Noelandia%2C%20me%20interesa%20la%20Galletita%20Sentada%20de%2042%20cm%20a%20S%2F65.%20%C2%BFSigue%20disponible%3F"},
+gnomo:{title:"Gnomo Barba Blanca",meta:"92 cm · disponible",price:"S/220",img:"assets/noelandia-optimized/gnomo.jpg",text:"Modelo grande de presencia decorativa, elaborado a mano.",list:["Disponibilidad sujeta a confirmación.","Personalización según materiales disponibles.","Envío a provincia con flete aparte."],wa:"https://wa.me/51934913841?text=Hola%20Noelandia%2C%20me%20interesa%20el%20Gnomo%20Barba%20Blanca%20de%2092%20cm%20a%20S%2F220.%20%C2%BFSigue%20disponible%3F"}
+};
+function openProduct(id){const p=products[id];document.getElementById("modalTitle").textContent=p.title;document.getElementById("modalMeta").textContent=p.meta;document.getElementById("modalPrice").textContent=p.price;document.getElementById("modalImg").src=p.img;document.getElementById("modalImg").alt=p.title;document.getElementById("modalText").textContent=p.text;document.getElementById("modalList").innerHTML=p.list.map(x=>"<li>"+x+"</li>").join("");document.getElementById("modalWa").href=p.wa;new bootstrap.Modal(document.getElementById("productModal")).show()}
+function openLightbox(src,alt){const box=document.getElementById("lightbox"),img=document.getElementById("lightboxImg");img.src=src;img.alt=alt;box.classList.add("open");document.body.style.overflow="hidden"}
+function closeLightbox(e,force){if(force||e.target.id==="lightbox"){document.getElementById("lightbox").classList.remove("open");document.body.style.overflow=""}}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){document.getElementById("lightbox").classList.remove("open");document.body.style.overflow=""}});
+</script>
+</body>
+</html>
